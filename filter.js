@@ -47,7 +47,7 @@ function Filter() {
               throw new TypeError('customBanWord was not specified')
           }
 
-          let outputValue = false;
+          let outputValue;
           
           
           customBanWord.forEach(data =>{

@@ -14,7 +14,7 @@ function isBanWord(banWord, test) {
 
 let hasBanWord = ()=>{
     let INPUTVALUE = sentence;
-    let Value = false
+    let Value;
 
     badwords.forEach(data => {
         if (INPUTVALUE.includes(data)){
