@@ -1,0 +1,26 @@
+{
+  "name": "devspeed-filterjs",
+  "version": "1.0.3",
+  "description": "filter.js is an javaScript library that makes it easy to filter User inputs.",
+  "main": "filter.js",
+  "scripts": {
+    "test": "index.js"
+  },
+
+
+ "repository": {
+    "type": "git",
+     "url": "https://github.com/silentwolf-dev/DevSpeed-filterjs.git"
+  },
+
+
+  "keywords": [
+    "bad words", 
+    "filter-js", 
+    "JavaScript", 
+    "cuss word blocker",
+    "swear word blocker"
+  ],
+  "author": "SilentWolf",
+  "license": "ISC"
+}
