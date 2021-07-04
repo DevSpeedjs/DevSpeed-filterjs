@@ -39,11 +39,29 @@ function Filter() {
 
             return value
 
-        }
-
-
-       
+        },
         
+        
+        hasCustomBan: (banWord, customBanWord, test)=>{
+          if(!customBanWord){
+              throw new TypeError('customBanWord was not specified')
+          }
+
+          let outputValue = false;
+          
+          
+          customBanWord.forEach(data =>{
+              if(banWord.includes(data)){
+                 outputValue = banWord.includes(data)
+              }    
+          })
+
+          if (outputValue == true) {
+             console.log(outputValue) 
+          }
+
+          return outputValue
+        }       
     }
     
 }
