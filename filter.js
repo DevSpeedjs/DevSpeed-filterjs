@@ -61,7 +61,7 @@ function Filter() {
           }
 
           return outputValue
-        }       
+        }
     }
     
 }
