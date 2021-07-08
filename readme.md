@@ -58,7 +58,7 @@ Uncaught SyntaxError: Cannot use import statement outside a module
  <script type='module' src='./fileName.js'></script>
 ```
 
-## cannot Get
+## cannot Get 
 
 
 > if You Get this Error in Your browser 
