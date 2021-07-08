@@ -45,6 +45,8 @@ filter.isBanWord("banWord") /// return a Boolean,
 # Error Detected
 > if You Get this Error in Your browser 
 
+## Cannot use import statement outside a module
+
 ```
 Uncaught SyntaxError: Cannot use import statement outside a module
 ```
@@ -55,6 +57,9 @@ Uncaught SyntaxError: Cannot use import statement outside a module
 ```html
  <script type='module' src='./fileName.js'></script>
 ```
+
+## cannot Get
+
 
 > if You Get this Error in Your browser 
 
