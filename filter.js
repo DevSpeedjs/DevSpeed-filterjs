@@ -46,13 +46,27 @@ let  hasCustomBan = (banWord, customBanWord)=>{
     })
    return outputValue
 }
+let rgx = new RegExp(badwords.join("|"), "gi");
 
+let sensor = (banword)=>{
+     
+    var regex = new RegExp(badwords.join("|"), "gi");
+    return banword.replace(regex, function (match) {
+        let stars = '';
+        for (var i = 0; i < match.length; i++) {
+            stars += '*';
+        }
 
+        return stars;
+    });
+
+}
 
 
 module.exports = {
     hasBanWord,
     isBanWord,
+    sensor,
     getBanWord,
     hasCustomBan,
 }
