@@ -1,70 +1,61 @@
-import badwords from "./data/badwords.js";
+const BANWORD = require('./data/banword.json')
+let badwords = BANWORD.banWords;
 
-import isBanWords from "./gobal.js";
-
-
-function Filter() {
-    return{
-        getBanWord: (log) => {
-           if(log === true){
-              console.log(badwords)
-
-              return badwords
-           }
-
-           return badwords
-        },
-
-
-        hasBanWord: (sentence, test )=>{
-            let INPUTVALUE = sentence;
-            let Value = false
-
-            badwords.forEach(data => {
-              if (INPUTVALUE.includes(data)){
-                 Value = sentence.includes(data)
-              }
-          });
-
-          if(test === true){console.log(Value)}
-          
-          return Value;
-        },
-        
-
-        isBanWord: (banWord, test)=>{
-            let value = badwords.includes(banWord) 
-    
-            if(test === true){console.log(value)}
-
-            return value
-
-        },
-        
-        
-        hasCustomBan: (banWord, customBanWord, test)=>{
-          if(!customBanWord){
-              throw new TypeError('customBanWord was not specified')
-          }
-
-          let outputValue;
-          
-          
-          customBanWord.forEach(data =>{
-              if(banWord.includes(data)){
-                 outputValue = banWord.includes(data)
-              }    
-          })
-
-          if (outputValue == true) {
-             console.log(outputValue) 
-          }
-
-          return outputValue
-        }
+let getBanWord = (callback) => {
+    if(typeof callback === 'function'){
+        callback(BANWORD)
     }
-    
+    return badwords
 }
 
 
-export default Filter;
+let hasBanWord = (sentence)=>{
+    let INPUTVALUE = sentence;
+    let Value = false
+
+    badwords.forEach(data => {
+      if (INPUTVALUE.includes(data)){
+        Value = true
+      }
+    })
+
+    return Value
+};
+
+
+let isBanWord = (banWord, debug)=>{
+    let value = badwords.includes(banWord) 
+
+    if(debug === true){console.log(value)}
+
+    return value
+
+};
+
+
+let  hasCustomBan = (banWord, customBanWord)=>{
+    if(!customBanWord){
+        throw new TypeError('customBanWord was not specified')
+    }
+    let outputValue = false
+    
+    customBanWord.forEach(data =>{
+        if(banWord.includes(data)){
+           outputValue = banWord.includes(data)
+        }    
+    })
+   return outputValue
+}
+
+
+
+
+module.exports = {
+    hasBanWord,
+    isBanWord,
+    getBanWord,
+    hasCustomBan,
+}
+
+
+
