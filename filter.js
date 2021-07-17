@@ -46,7 +46,6 @@ let  hasCustomBan = (banWord, customBanWord)=>{
     })
    return outputValue
 }
-let rgx = new RegExp(badwords.join("|"), "gi");
 
 let sensor = (banword)=>{
      
