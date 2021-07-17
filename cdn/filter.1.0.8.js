@@ -1,5 +1,0 @@
-function filter() {
-    return {
-        
-    }
-}

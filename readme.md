@@ -24,7 +24,21 @@ filter.js is an javaScript library that makes it easy to filter User inputs. **f
  filter.hasBanWord('f*uk') // return true
 ```
 
+#### `censor()` method
 
-# verison 1.0.7
+``` js
+// added in version 1.0.7
 
-version 1.0.6 bug fixs you can now use this package in serverside applications with out getting err `cannot import outside the module`, 
+filter.censor('banword') // return the cussword censored
+
+// example
+
+filter.censor('f*ck') // return **** or f****
+```
+#### also works in sentences
+
+```js
+filter.censor('hello fuck you')  // return hello **** you
+```
+
+

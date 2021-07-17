@@ -62,6 +62,8 @@ let sensor = (banword)=>{
 }
 
 
+
+
 module.exports = {
     hasBanWord,
     isBanWord,
