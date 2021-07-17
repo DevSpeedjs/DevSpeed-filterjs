@@ -1,55 +1,20 @@
 const BANWORD = require('./data/banword.json')
-let badwords = BANWORD.banWords;
-
-let getBanWord = (callback) => {
-    if(typeof callback === 'function'){
-        callback(BANWORD)
-    }
-    return badwords
-}
-
-
-let hasBanWord = (sentence)=>{
-    let INPUTVALUE = sentence;
-    let Value = false
-
-    badwords.forEach(data => {
-      if (INPUTVALUE.includes(data)){
-        Value = true
-      }
-    })
-
-    return Value
-};
+const Filter = require('./FilterClass.js')
+let { customBanWord }= require('./data/customWord.json')
+let  getCustomWord = require('./handler/getcustomWords')
+let getBanWord = require('./handler/getBanWords')
+let isBanWord = require('./handler/isBanWord')
+let hasBanWord = require('./handler/hasBanWord')
+const addCustomWord = require('./handler/addCustomwords')
 
 
-let isBanWord = (banWord, debug)=>{
-    let value = badwords.includes(banWord) 
-
-    if(debug === true){console.log(value)}
-
-    return value
-
-};
 
 
-let  hasCustomBan = (banWord, customBanWord)=>{
-    if(!customBanWord){
-        throw new TypeError('customBanWord was not specified')
-    }
-    let outputValue = false
-    
-    customBanWord.forEach(data =>{
-        if(banWord.includes(data)){
-           outputValue = banWord.includes(data)
-        }    
-    })
-   return outputValue
-}
+
 
 let censor = (banword)=>{
      
-    var regex = new RegExp(badwords.join("|"), "gi");
+    let regex = new RegExp(badwords.join("|"), "gi");
     return banword.replace(regex, function (match) {
         let stars = '';
         for (var i = 0; i < match.length; i++) {
@@ -65,11 +30,13 @@ let censor = (banword)=>{
 
 
 module.exports = {
-    hasBanWord,
     isBanWord,
-    censor,
+    hasBanWord,
     getBanWord,
-    hasCustomBan,
+    addCustomWord,
+    censor,
+    Filter,
+    getCustomWord,
 }
 
 
