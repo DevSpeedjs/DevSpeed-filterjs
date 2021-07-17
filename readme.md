@@ -33,12 +33,12 @@ filter.censor('banword') // return the cussword censored
 
 // example
 
-filter.censor('f*ck') // return **** or f****
+filter.censor('some bad words') // return ****
 ```
 #### also works in sentences
 
 ```js
-filter.censor('hello fuck you')  // return hello **** you
+filter.censor('hello f*ck you')  // return hello **** you
 ```
 
 
