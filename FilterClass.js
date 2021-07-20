@@ -25,7 +25,7 @@ class Filter {
     }
 
     sensor(){
-      let regex = new RegExp(badwords.join("|"), "gi");
+     let regex = new RegExp(badwords.join("|"), "gi");
       return this.banWord.replace(regex, function (match) {
         let stars = '';
         for (var i = 0; i < match.length; i++) {
