@@ -1,16 +1,15 @@
-const BANWORD = require('./data/banword.json')
-const Filter = require('./FilterClass.js')
+const BANWORD = require('../data/banword.json')
+const Filter = require('../FilterClass.js')
 let badwords = BANWORD.banWords;
 
 
 
 let isBanWord = (banWord, debug)=>{
-    let value = badwords.includes(banWord) 
+    let reg = new RegExp(badwords.join('|'), "gi")
 
-    if(debug === true){console.log(value)}
+    if(debug === true){console.log(reg.test(banWord))}
 
-    return value
-
+    return reg.test(banWord)
 };
 
 

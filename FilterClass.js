@@ -24,7 +24,7 @@ class Filter {
         return reg.test(this.banWord)
     }
 
-    sensor(){
+    censor(){
      let regex = new RegExp(badwords.join("|"), "gi");
       return this.banWord.replace(regex, function (match) {
         let stars = '';

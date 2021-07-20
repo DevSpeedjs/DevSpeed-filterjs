@@ -42,3 +42,15 @@ filter.censor('hello f*ck you')  // return hello **** you
 ```
 
 
+# other methods
+
+```js
+const filter = require('devspeed-filterjs') 
+const { Filter } = require('devspeed-filterjs') 
+
+let filterMessages = new Filter('some bad words')
+
+filterMessages.isBanWord((results)=>{
+    console.log(results) // return true or false
+})
+```

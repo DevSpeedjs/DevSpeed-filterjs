@@ -1,6 +1,5 @@
-const BANWORD = require('./data/banword.json')
-const Filter = require('./FilterClass.js')
-let { customBanWord }= require('./data/customWord.json')
+const BANWORD = require('../data/banword.json')
+const Filter = require('../FilterClass.js')
 let badwords = BANWORD.banWords;
 
 
