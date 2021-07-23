@@ -1,9 +1,8 @@
-const BANWORD = require('../data/banword.json')
-const Filter = require('../FilterClass.js')
-let badwords = BANWORD.banWords;
+import BANWORD from './banword.json';
+const badwords: string[] = BANWORD.banWords;
 
 
-let censor = (banword)=>{
+let censor = (banword: string)=>{
      
     let regex = new RegExp(badwords.join("|"), "gi");
     return banword.replace(regex, function (match) {
@@ -17,4 +16,5 @@ let censor = (banword)=>{
     
 }
 
-module.exports = censor;
+export = censor
+
