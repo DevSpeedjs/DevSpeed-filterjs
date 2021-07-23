@@ -1,5 +1,6 @@
 import censor from "./censor";
 import getBanWord from "./getwords";
+import Filter from "./filterClass";
 import isBanWord from "./isword";
 import hasBanWord from "./hasword";
 import BANWORD from './banword.json';
@@ -12,5 +13,7 @@ export {
     censor,
     getBanWord,
     hasBanWord,
+    Filter,
     isBanWord,
+    
 }
