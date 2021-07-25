@@ -54,3 +54,13 @@ filterMessages.isBanWord((results)=>{
     console.log(results) // return true or false
 })
 ```
+
+
+# funtions list
+
+| Syntax | Description |
+| ------| ----------- |
+| getBanWord()    | return all ban word in json format |
+| isBanWord()     | checks an single args and return true or false|
+| hasBanWord()    | checks an sentence and return true or false |
+| Filter()        | an class containing all the methods|
