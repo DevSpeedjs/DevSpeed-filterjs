@@ -2,6 +2,8 @@
 import BANWORD from './banword.json';
 const badwords: string[] = BANWORD.banWords;
 
+//  Get all banwords from banword.json file
+
 let getBanWord = (callback: (result: any)=> any) => {
     if (typeof callback === "function") {
         return callback(BANWORD)
@@ -13,6 +15,7 @@ let getBanWord = (callback: (result: any)=> any) => {
 let censor = (banword: string)=>{
      
     let regex = new RegExp(badwords.join("|"), "gi");
+    
     return banword.replace(regex, function (match) {
         let stars = '';
         for (var i = 0; i < match.length; i++) {
@@ -48,7 +51,22 @@ let isBanWord = (banWord: string, debug: boolean)=>{
 };
 
 
+let addBanWord = (banword: string[])=> {
+    if(!banword || banword === null || banword === undefined){
+        return;
+    }else if(Array.isArray(banword) === false){
+      throw new Error('addbanWord() must take an Array') 
+    }
 
+   for (let index = 0; index < banword.length; index++) {
+     // geting ban word form the param and adding it
+       const customBanword: string = banword[index];
+       badwords.push(customBanword);
+   }
+}
+
+
+// the class Filter
 class Filter {
     private BanWord: string;
 
@@ -91,6 +109,20 @@ class Filter {
            return stars;
          });
     }
+
+    static addBanWord(banword: string[]){
+        if(!banword || banword === null || banword === undefined){
+            return;
+        }else if(Array.isArray(banword) === false){
+            throw new Error('addbanWord() must take an Array') 
+        }
+    
+        for (let index = 0; index < banword.length; index++) {
+           // geting ban word form the param and adding it
+             const customBanword: string = banword[index];
+             badwords.push(customBanword);
+        }
+    }
   
 
 }
@@ -101,5 +133,6 @@ export {
     hasBanWord,
     getBanWord,
     isBanWord,
+    addBanWord,
     Filter,
 }
