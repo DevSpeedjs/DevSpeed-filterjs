@@ -61,6 +61,13 @@ let addBanWord = (banword: string[])=> {
    for (let index = 0; index < banword.length; index++) {
      // geting ban word form the param and adding it
        const customBanword: string = banword[index];
+
+       badwords.forEach(data =>{
+           if(data.includes(customBanword)){
+               throw 'banword already in the dictionary taken';
+           }
+       })
+
        badwords.push(customBanword);
    }
 }
@@ -114,14 +121,21 @@ class Filter {
         if(!banword || banword === null || banword === undefined){
             return;
         }else if(Array.isArray(banword) === false){
-            throw new Error('addbanWord() must take an Array') 
+          throw new Error('addbanWord() must take an Array') 
         }
     
-        for (let index = 0; index < banword.length; index++) {
-           // geting ban word form the param and adding it
-             const customBanword: string = banword[index];
-             badwords.push(customBanword);
-        }
+       for (let index = 0; index < banword.length; index++) {
+         // geting ban word form the param and adding it
+           const customBanword: string = banword[index];
+    
+           badwords.forEach(data =>{
+               if(data.includes(customBanword)){
+                   throw 'banword already in the dictionary taken';
+               }
+           })
+    
+           badwords.push(customBanword);
+       }
     }
   
 

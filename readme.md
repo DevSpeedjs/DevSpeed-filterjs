@@ -55,6 +55,30 @@ filterMessages.isBanWord((results)=>{
 })
 ```
 
+### add ban word to the dictionary
+if filterjs does not block/censor the curse word than use this function
+
+```js
+  const filter = require('devspeed-filterjs')
+
+    const new_banword = [
+    'foo',
+    'bar',
+    ] 
+
+   try {
+    filter.addBanWord(new_banword)
+    
+   } catch (error) {
+      console.log(error)
+   }
+```
+> to add a custom ban word to the `dictionary`
+
+# what is the `try` `catch` block for
+To prevent you form adding an banword that is already in `dictionary`, we throw an error that says `banword already in the dictionary taken`, so we recommend useing the try catch block to not crash your program 
+
+**put this function at the top of your js file for it to work well**
 
 # funtions list
 
