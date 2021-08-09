@@ -62,10 +62,10 @@ let addBanWord = (banword: string[])=> {
      // geting ban word form the param and adding it
        const customBanword: string = banword[index];
 
-       badwords.forEach(data =>{
-           if(data.includes(customBanword)){
-               throw 'banword already in the dictionary taken';
-           }
+       badwords.map((Badwords: string)=>{
+            if(badwords.includes(customBanword)){
+                throw 'banword already in the dictionary'
+            }
        })
 
        badwords.push(customBanword);
@@ -128,11 +128,11 @@ class Filter {
          // geting ban word form the param and adding it
            const customBanword: string = banword[index];
     
-           badwords.forEach(data =>{
-               if(data.includes(customBanword)){
-                   throw 'banword already in the dictionary taken';
-               }
-           })
+           badwords.map((Badwords: string)=>{
+            if(badwords.includes(customBanword)){
+                throw 'banword already in the dictionary'
+            }
+          })
     
            badwords.push(customBanword);
        }
